@@ -75,26 +75,30 @@ Terminal 2: Compress the Stream
 Open a second SSH session to your Pi. This command listens to the raw image data from the first terminal, compresses it into tiny JPEG files to save Wi-Fi bandwidth, and broadcasts it to the network.
 
 ```
-ros2 run image_transport republish raw compressed --ros-args --remap in:=/image --remap out/compressed:=/image_compressed/compressed
+
+ros2 run image_transport republish --ros-args -p in_transport:=raw -p out_transport:=compressed --remap in:=/image --remap out:=/image_compressed
+
 ```
 
 2. Desktop PC (The Viewer)
+1.Run the decompressor (PC Terminal 1):This node catches the tiny, compressed Wi-Fi stream (/image_compressed/compressed) and unpacks it into a full raw image (/image_viewable) right inside your PC.
+```
+source /opt/ros/lyrical/setup.bash
+ros2 run image_transport republish --ros-args -p in_transport:=compressed -p out_transport:=raw --remap in:=/image_compressed --remap out:=/image_viewable
+```
 
-Terminal 1: Launch the Viewer
-This command ensures your PC looks in the correct system folder for the viewer, and then launches the graphical interface.
+2.Clear cache and launch viewer (PC Terminal 2):We will launch the viewer with the --clear-config flag. This deletes its memory, breaking the crash loop and opening a fresh window.
 
 ```
 source /opt/ros/lyrical/setup.bash
-ros2 run rqt_image_view rqt_image_view
+ros2 run rqt_image_view rqt_image_view --clear-config
 ```
 
-Inside the rqt_image_view window:
+Once the fresh window opens:
 
-    Click the dropdown menu in the top-left corner.
+    Click the dropdown menu at the top left.
 
-    Select /image_compressed/compressed.
-
-
+    Select /image_viewable (do not select the compressed one!).
 
 
 
