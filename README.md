@@ -119,6 +119,7 @@ ls /dev/ttyUSB*
 Rpi
 Terminal1:
 sudo chmod 666 /dev/ttyACM0
+source install/setup.bash
 ros2 run my_robot_bridge serial_node
 
 Lidar:
