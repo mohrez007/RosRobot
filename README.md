@@ -61,6 +61,12 @@ ros2 run demo_nodes_cpp listener
 ```
 
 # Camera setup
+Hardware Privileges (Raspberry Pi Only)
+```
+sudo usermod -aG video $USER
+
+```
+
 1. Raspberry Pi (The Publisher)
 
 Terminal 1: Start the Camera Capture
@@ -101,5 +107,12 @@ Once the fresh window opens:
     Select /image_viewable (do not select the compressed one!).
 
 
+
+# Check Lidar and Arduino ports
+
+```
+ls /dev/ttyACM*
+ls /dev/ttyUSB*
+```
 
 
