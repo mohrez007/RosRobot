@@ -21,6 +21,7 @@ sudo apt install ros-humble-demo-nodes-cpp -y
 ```
 
 # install ROS2 Humble on PC:
+```
 sudo apt update && sudo apt install locales -y
 sudo locale-gen en_US en_US.UTF-8
 sudo update-locale LC_ALL=en_US.UTF-8 LANG=en_US.UTF-8
@@ -38,13 +39,18 @@ sudo apt install ros-humble-desktop -y
 
 echo "source /opt/ros/humble/setup.bash" >> ~/.bashrc
 source ~/.bashrc
+```
 
 # Test the connection
 On PC:
+```
 ros2 run demo_nodes_cpp talker
+```
 
 on Rpi:
+```
 ros2 run demo_nodes_cpp listener
+```
 
 
 
