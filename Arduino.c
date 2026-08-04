@@ -385,7 +385,6 @@ void resetEncoders() {
 
 void moveForward() {
 
-  resetEncoders();
 
   isMovingStraight = true;
 
@@ -412,7 +411,6 @@ void moveForward() {
 
 void moveBackward() {
 
-  resetEncoders();
 
   isMovingStraight = true;
 
