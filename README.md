@@ -2,6 +2,14 @@
 This is my repository for Ros2 Robot car
 Required Hardware: Raspberry Pi 4, Desktop PC
 Required OS: 
+For the Desktop PC:
+Go to the Ubuntu MATE website's download page, select "Desktop", and download the Ubuntu MATE 22.04.3 LTS ISO file. Flash this to a USB drive (by RUFUS) to install on your PC.
+
+For the Raspberry Pi:
+Open the Raspberry Pi Imager tool on your PC.
+Go to Choose OS -> Other specific-purpose OS -> Ubuntu -> scroll down and select Ubuntu MATE 22.04 LTS (Make sure to pick the 64-bit version for your specific Raspberry Pi model).
+Ubuntu Mate server edition is good for Rpi.
+
 
 # Install ROS 2 Humble on Raspberry Pi:
 ```
