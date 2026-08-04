@@ -60,6 +60,42 @@ on Rpi:
 ros2 run demo_nodes_cpp listener
 ```
 
+# Camera setup
+1. Raspberry Pi (The Publisher)
+
+Terminal 1: Start the Camera Capture
+This command uses libcamerify to translate the raw camera data, and cam2image to reliably read the format without distorting it. It uses best_effort networking to drop late frames and prevent lag.
+
+```
+libcamerify ros2 run image_tools cam2image --ros-args -p width:=640 -p height:=480 -p reliability:=best_effort
+
+```
+
+Terminal 2: Compress the Stream
+Open a second SSH session to your Pi. This command listens to the raw image data from the first terminal, compresses it into tiny JPEG files to save Wi-Fi bandwidth, and broadcasts it to the network.
+
+```
+ros2 run image_transport republish raw compressed --ros-args --remap in:=/image --remap out/compressed:=/image_compressed/compressed
+```
+
+2. Desktop PC (The Viewer)
+
+Terminal 1: Launch the Viewer
+This command ensures your PC looks in the correct system folder for the viewer, and then launches the graphical interface.
+
+```
+source /opt/ros/lyrical/setup.bash
+ros2 run rqt_image_view rqt_image_view
+```
+
+Inside the rqt_image_view window:
+
+    Click the dropdown menu in the top-left corner.
+
+    Select /image_compressed/compressed.
+
+
+
 
 
 
