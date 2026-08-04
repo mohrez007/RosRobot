@@ -4,7 +4,7 @@ Required Hardware: Raspberry Pi 4, Desktop PC
 Required OS: 
 
 # Install ROS 2 Humble on Raspberry Pi:
-
+\\\
 sudo apt update && sudo apt install locales software-properties-common curl -y
 sudo add-apt-repository universe -y
 sudo curl -sSL https://raw.githubusercontent.com/ros/rosdistro/master/ros.key -o /usr/share/keyrings/ros-archive-keyring.gpg
@@ -18,6 +18,7 @@ source ~/.bashrc
 
 sudo apt update
 sudo apt install ros-humble-demo-nodes-cpp -y
+\\\
 
 # install ROS2 Humble on PC:
 sudo apt update && sudo apt install locales -y
