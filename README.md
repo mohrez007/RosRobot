@@ -116,10 +116,14 @@ ls /dev/ttyUSB*
 ```
 
 # Ros Robot 
+ssh pi@192.168.219.112
+password: 
+
 Rpi
 Terminal1:
 ```
 sudo chmod 666 /dev/ttyACM0
+cd ros2_ws
 source install/setup.bash
 ros2 run my_robot_bridge serial_node
 ```
