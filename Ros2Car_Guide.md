@@ -77,3 +77,9 @@ cd ~/robot_ws
 ros2 run nav2_map_server map_saver_cli -f my_room_map
 
 ```
+
+**Run Full Navigation with automatic opening terminals**
+```
+ros2 launch articubot_one navigation_full.launch.py
+
+```
