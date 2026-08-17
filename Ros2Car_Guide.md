@@ -4,7 +4,14 @@ Ensure that `ROS_DOMAIN_ID=42` (or your chosen ID) is exported in `~/.bashrc` on
 
 ---
 
+
 ### **Raspberry Pi Terminals**
+
+**Build after any change on YAML files**
+```
+cd ~/robot_ws && colcon build --symlink-install && source install/setup.bash
+
+```
 
 **Terminal 1: Robot Base & ROS2 Control**
 
