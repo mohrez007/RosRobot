@@ -33,6 +33,10 @@ ros2 launch slam_toolbox online_async_launch.py slam_params_file:=./src/articubo
 
 ```
 
+** For Nav2**
+```bash
+ros2 launch nav2_bringup bringup_launch.py   map:=/home/pi/robot_ws/maps/my_room_map.yaml   use_sim_time:=false   params_file:=./src/articubot_one/config/nav2_params.yaml
+```
 ---
 
 ### **PC Terminals**
